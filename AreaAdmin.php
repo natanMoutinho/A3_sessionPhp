@@ -34,7 +34,15 @@
 </head>
 <body>
     <?php
-        echo '<h3>Bem Vindo <label> '.$_SESSION['user'].'</label>!</h3>';     
+        echo '<h3>Bem Vindo <label> '.$_SESSION['user'].'</label>!</h3>';
+        include_once './CookieManager.php';
+        $corbg = getColorCookie();
+        if(isset($corbg)){
+            echo '<body style="background:#'.$corbg.' ;">'; 
+        }else{
+            echo '<body>';
+        }
+        
      ?>
      <a href="Logout.php">Sair</a>
      <hr>
