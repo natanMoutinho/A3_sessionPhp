@@ -6,9 +6,9 @@
         if ($_POST['login'] == $user[0]['login'] && $_POST['password'] == $user[0]['senha']) {
             session_start();
             $_SESSION['user'] = $_POST['login'];
-            header('Location: http://localhost/session/AreaAdmin.php');
+            header('Location: http://localhost/Atividade3_Modulo2_ProgWeb_NatanMoutinho_PedroLucasBastos/session/AreaAdmin.php');
         } else {
-            header('Location: http://localhost/session/AcessoNegado.php');
+            header('Location: http://localhost/Atividade3_Modulo2_ProgWeb_NatanMoutinho_PedroLucasBastos/session/AcessoNegado.php');
         }
     }
 

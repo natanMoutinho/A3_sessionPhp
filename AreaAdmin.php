@@ -1,7 +1,7 @@
 <?php  
     session_start();
     if (!isset($_SESSION['user'])) {
-        header('Location: http://localhost/session/AcessoNegado.php');
+        header('Location: http://localhost/Atividade3_Modulo2_ProgWeb_NatanMoutinho_PedroLucasBastos/session/AcessoNegado.php');
     }
 ?>
 <!DOCTYPE html>
@@ -32,17 +32,13 @@
         #cor-amarelo { background-color: #fcfccb}        
     </style>
 </head>
-<body>
-    <?php
-        echo '<h3>Bem Vindo <label> '.$_SESSION['user'].'</label>!</h3>';
+<body 
+    <?php 
         include_once './CookieManager.php';
-        $corbg = getColorCookie();
-        if(isset($corbg)){
-            echo '<body style="background:#'.$corbg.' ;">'; 
-        }else{
-            echo '<body>';
-        }
-        
+        echo 'style="background:#'.getColorCookie().' ;"'; 
+    ?>>
+    <?php
+        echo '<h3>Bem Vindo <label> '.$_SESSION['user'].'</label>!</h3>';     
      ?>
      <a href="Logout.php">Sair</a>
      <hr>
@@ -52,7 +48,5 @@
         <a href="CookieManager.php?cor=d1fecb"><div id="cor-verde" class="cores"></div></a> 
         <a href="CookieManager.php?cor=fcfccb"><div id="cor-amarelo" class="cores"></div></a> 
     </div>
-
-    
 </body>
 </html>
